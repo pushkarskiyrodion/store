@@ -1,46 +1,71 @@
-# Getting Started with Create React App
+# Catalog Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the Device Catalog project! This is a web application that allows users to explore a variety of devices and products, add them to their favorite list or shopping cart, and have these selections saved in their local storage for a seamless user experience.
 
-## Available Scripts
+Check out the [DEMO LINK](https://pushkarskiyrodion.github.io/phone_catalog-react/) to see the live version of the Catalog project.
 
-In the project directory, you can run:
+## Features
++ Device Catalog: Browse and explore a diverse range of devices.
++ Favorites: Add products to your favorites list for quick access.
++ Shopping Cart: Build your shopping cart and proceed to checkout.
++ Local Storage: All your selections are saved in your local storage for persistent user experience.
++ Redux State Management: Utilizes Redux for efficient state management.
++ React Components: Developed using React components for modularity and reusability.
++ TypeScript: Written in TypeScript for improved code quality and maintainability.
++ SCSS: Styled using SCSS for a clean and organized UI.
 
-### `npm start`
+## Getting Started
+Prerequisites
+Node.js and npm: Make sure you have Node.js and npm (Node Package Manager) installed on your machine. You can download them from Node.js official website.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. Clone the repository: `git clone https://github.com/pushkarskiyrodion/phone_catalog-react.git`
+2. Navigate to the project directory: `cd phone_catalog-react`
+3. Install dependencies: `npm install`
+4. Start the development server: `npm start`
+5. Open your web browser and visit: `http://localhost:3000`
 
-### `npm test`
+## Usage
+### Browsing Devices
++ Open the application in your web browser.
++ Browse through the list of devices in the catalog.
++ Click on a device to view its details.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Sorting
++ Use the sorting options to rearrange the devices based on your preferences, such as price or popularity.
 
-### `npm run build`
+### Searching
+Enter keywords in the search bar to find specific devices that match your query.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Managing Favorites
++ To add a device to your favorites, click the heart icon on the device.
++ To view your favorite devices, navigate to the "Favorites" section.
++ You can remove devices from your favorites list as well by clicking the heart icon.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Shopping Cart
++ To add a device to your shopping cart, click the "Add to Cart" button on the device.
++ To view your shopping cart and proceed to checkout, navigate to the "Shopping Cart" section.
++ You can update the quantity or remove devices from your cart.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technologies Used
++ React
++ Redux
++ TypeScript
++ SCSS
 
-### `npm run eject`
+## Contributing
+Contributions are welcome! If you have any bug fixes, improvements, or new features to add, please follow these steps:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
++ Fork the repository.
++ Create a new branch for your feature or bug fix.
++ Commit your changes.
++ Push your branch to your forked repository.
++ Open a pull request describing your changes.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## License
+This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/license/mit/) file for details.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Feedback
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Thank you for checking out our Catalog project! If you have any questions or feedback, please don't hesitate to [contact me](mailto:pushkarskiyrodion@gmail.com). Your input is greatly appreciated!
