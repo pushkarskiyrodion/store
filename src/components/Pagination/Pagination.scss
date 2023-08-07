@@ -46,6 +46,7 @@
     background-image: url(../../assets/arrow-right.svg);
     background-repeat: no-repeat;
     background-position: center;
+    cursor: pointer;
 
     &--prev {
       transform: rotate(180deg);

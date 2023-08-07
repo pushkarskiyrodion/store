@@ -1,7 +1,7 @@
 {
   "name": "phone-catalog_react",
   "version": "0.1.0",
-  "homepage": "https://pushkarskiyrodion.github.io/phone_catalog-react",
+  "homepage": "https://pushkarskiyrodion.github.io/phone_catalog-react/",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
