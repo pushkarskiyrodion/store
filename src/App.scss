@@ -1,0 +1,47 @@
+@import "./styles/reset.scss";
+@import "./styles/page.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 500;
+}
+
+button {
+  font: inherit;
+  background-color: inherit;
+}
+
+@font-face {
+  font-family: "Mont";
+  src: url("./fonts/Mont-Bold.otf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Mont";
+  src: url("./fonts/Mont-Regular.otf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Mont";
+  src: url("./fonts/Mont-Bold.otf");
+  font-weight: 600;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  font-family: "Mont", sans-serif;
+}

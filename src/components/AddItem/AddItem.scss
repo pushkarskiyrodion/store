@@ -1,0 +1,59 @@
+@import "../../styles/shared";
+
+.add-item {
+  &__wrapper {
+    display: flex;
+    margin-top: 16px;
+  }
+
+  &__favorite {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border: 1px solid $light-gray-color;
+    cursor: pointer;
+
+    transition: border-color 0.3s ease-out;
+
+    &:hover {
+      border-color: $primary-color;
+    }
+
+    &::after {
+      width: 16px;
+      height: 16px;
+      content: url(../../assets/favorite-icon.svg);
+    }
+
+    &--added {
+      content: url(../../assets/favourite-icon-filled.svg);
+    }
+  }
+
+  &__to-card {
+    flex-grow: 1;
+    background-color: $primary-color;
+    border: 1px solid $primary-color;
+    padding: 10px 42px;
+    margin-right: $product-card-margin * 1px;
+    text-align: center;
+    font-weight: 600;
+    line-height: 21px;
+    color: $white-color;
+    cursor: pointer;
+
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      box-shadow: $dart-box-shadow;
+    }
+
+    &--added {
+      background-color: $white-color;
+      color: $green-color;
+      border: 1px solid $light-gray-color;
+      padding: 10px 34px;
+    }
+  }
+}

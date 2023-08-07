@@ -1,0 +1,73 @@
+@import "../../styles/shared";
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 -1px 0 0 $light-gray-color;
+  padding: 0 $container-horisontal-padding;
+
+  @include onMobile {
+    padding: 0 40px;
+  }
+
+  &__logo {
+    padding: 36px 0;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 64px;
+  }
+
+  &__link {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 11px;
+    letter-spacing: 0.48px;
+    text-transform: uppercase;
+    color: $gray-color-secondary;
+    padding: 36px 0;
+    transition: color 0.35s ease-out;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  &__back-to-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+
+    &__label {
+      font-size: 12px;
+      font-weight: 600;
+      color: $gray-color-secondary;
+      cursor: pointer;
+      transition: color 0.35s ease-out;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+
+    &__button {
+      background-repeat: no-repeat;
+      background-image: url(../../assets/arrow-right.svg);
+      background-position: center;
+      transform: rotate(-90deg);
+      border: 1px solid $primary-color;
+      cursor: pointer;
+      padding: 15px;
+      transition: opacity 0.2s ease-out;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}

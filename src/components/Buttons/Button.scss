@@ -1,0 +1,29 @@
+@import "../../styles/shared";
+
+.button {
+  position: relative;
+  display: flex;
+  padding: $padding-header;
+  color: $white-color;
+  box-shadow: -1px 0 0 $light-gray-color;
+
+  &__count {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1px;
+    height: 15px;
+    width: 15px;
+    top: 25%;
+    right: 25%;
+
+    background-color: $red-color;
+    border: 1px solid $white-color;
+    border-radius: 100%;
+    color: $white-color;
+    text-align: center;
+    font-size: 9px;
+    font-weight: 600;
+  }
+}

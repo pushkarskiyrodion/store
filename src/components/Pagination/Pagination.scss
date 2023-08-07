@@ -1,0 +1,58 @@
+@import "../../styles/shared";
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  &__list {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__link {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $primary-color;
+  }
+
+  &__item {
+    width: 32px;
+    height: 32px;
+    border: 1px solid $light-gray-color;
+    list-style: none;
+
+    &--active {
+      background-color: $primary-color;
+
+      & > .pagination__link {
+        color: $white-color;
+      }
+    }
+  }
+
+  &__gap {
+    display: flex;
+    align-items: center;
+  }
+
+  &__button {
+    width: 32px;
+    height: 32px;
+    border: 1px solid $light-gray-color;
+    background-image: url(../../assets/arrow-right.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &--prev {
+      transform: rotate(180deg);
+    }
+
+    &--disabled {
+      background-image: url(../../assets/arrow-right-disabled.svg);
+    }
+  }
+}

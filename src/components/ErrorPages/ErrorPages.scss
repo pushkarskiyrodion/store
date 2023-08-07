@@ -1,0 +1,29 @@
+@import "../../styles/shared";
+
+.error-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  flex: 1 1 auto;
+  margin: 30px;
+
+  &__title {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 140%;
+    color: $primary-color;
+  }
+
+  &__image {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+
+    &__container {
+      height: 550px;
+    }
+  }
+}

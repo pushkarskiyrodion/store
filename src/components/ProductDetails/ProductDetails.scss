@@ -1,0 +1,258 @@
+@import "../../styles/shared";
+
+.product-details {
+  min-height: 100%;
+  flex: 1 1 auto;
+  margin: 24px 15px 0;
+
+  @include onDesktop {
+    padding: 25px 152px 0;
+  }
+
+  @include MobileAndTablet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  @include onLaptop {
+    padding: 0 50px;
+  }
+
+  &__thumbnails {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+
+    @include onMobile {
+      margin-top: 10px;
+      flex-direction: row;
+    }
+  }
+  
+  &__main {
+    margin-top: 40px;
+
+    & > .product-slider {
+      padding-bottom: $slider-padding;
+    }
+  }
+
+  &__header {
+    display: flex;
+
+    @include MobileAndTablet {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__container {
+    &__colors {
+      border-bottom: 1px solid $light-gray-color;
+    }
+
+    &__tech {
+      margin-top: 32px;
+    }
+  }
+
+  &__data {
+    width: 40%;
+
+    @include onMobile {
+      width: 70%;
+      margin-top: 20px;
+    }
+  }
+
+  &__thumb {
+    &__item {
+      display: flex;
+      height: 20%;
+      padding: 10px;
+
+      @include onMobile {
+        height: auto;
+      }
+
+      & > img {
+        width: 47px;
+        height: 73px;
+        object-fit: contain;
+      }
+    }
+
+    &--active {
+      border: 1px solid $primary-color;
+    }
+  }
+
+  &__colors {
+    display: flex;
+    gap: 8px;
+    margin: 8px 0 24px;
+  }
+
+  &__title-product {
+    font-size: 12px;
+    font-weight: 500;
+    color: $gray-color-secondary;
+  }
+
+  &__link-color {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    border: 1px solid $light-gray-color;
+    border-radius: 50%;
+
+    transition: border-color 0.3s ease-out;
+
+    &:hover {
+      border-color: $gray-color-icons;
+    }
+
+    &--active {
+      border-color: $primary-color;
+    }
+  }
+
+  &__color {
+    border-radius: 50%;
+    border: 1px solid $light-gray-color;
+    width: 32px;
+    height: 32px;
+  }
+
+  &__image {
+    &__container {
+      display: flex;
+      width: 45%;
+      height: 464px;
+      margin-right: 64px;
+
+      @include MobileAndTablet {
+        width: auto;
+        margin-right: 0;
+      }
+
+      @include onMobile {
+        flex-direction: column-reverse;
+        align-items: center;
+        height: 540px;
+      }
+    }
+
+    &__main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 442px;
+      height: 442px;
+      padding: 0 40px;
+
+      @include onMobile {
+        width: auto;
+      }
+
+      & > img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  &__capacity {
+    display: flex;
+    flex-direction: column;
+    margin-top: 24px;
+    border-bottom: 1px solid $light-gray-color;
+
+    &__item {
+      padding: 7px 8px 4px;
+      color: $primary-color;
+      border: 1px solid $gray-color-icons;
+      font-weight: 500;
+      line-height: 21px; 
+    }
+
+    &__available {
+      display: flex;
+      margin: 8px 0 24px;
+      gap: 8px;
+    }
+
+    &--active {
+      color: $white-color;
+      background-color: $primary-color;
+    }
+  }
+
+  &__price {
+    margin-top: 32px;
+  }
+
+  &__info {
+    display: flex;
+    gap: 64px;
+    margin-top: 80px;
+
+    @include onMobile {
+      flex-direction: column;
+    }
+
+    &__title {
+      border-bottom: 1px solid $light-gray-color;
+      padding-bottom: 16px;
+    }
+
+    &__container {
+      width: 50%;
+
+      @include onMobile {
+        width: auto;
+        padding: 0 30px;
+      }
+    }
+  }
+
+  &__tech-specs {
+    font-weight: 500;
+    line-height: 21px;
+    margin-top: 25px;
+
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      gap: 19px;
+
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+    }
+  
+    &__title {
+      color: $gray-color-secondary;
+    }
+
+    &__text {
+      color: $primary-color;
+    }
+  }
+
+  &__id {
+    width: 15%;
+    color: $gray-color-icons;
+    font-size: 12px;
+    font-weight: 600;
+
+    @include MobileAndTablet {
+      width: auto;
+      margin-top: 15px;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@import "../../styles/shared";
+
+.user-location {
+  display: flex;
+  gap: 12px;
+  padding-bottom: 40px;
+
+  &__link {
+    &-page {
+      color: $gray-color-secondary;
+      transition: color 0.3s ease-in;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+
+    &-product {
+      color: $gray-color-secondary;
+    }
+  }
+
+  &__gap {
+    color: $gray-color-icons;
+  }
+}

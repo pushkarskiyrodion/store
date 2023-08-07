@@ -1,0 +1,30 @@
+@import "../../../styles/shared";
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 16px;
+
+  &__arrow {
+    width: 16px;
+    height: 20px;
+    background-image: url(../../../assets/arrow-right.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotate(180deg);
+  }
+
+  &__back {
+    height: 20px;
+    color: $gray-color-secondary;
+    font-size: 12px;
+    cursor: pointer;
+
+    transition: color 0.3s ease-in;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}

@@ -1,0 +1,231 @@
+@import "./shared";
+
+.page {
+  &__title {
+    &-main {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.32px;
+
+      @include MobileAndTablet {
+        line-height: 31px;
+      }
+    }
+
+    &-section {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 140%;
+      color: $primary-color;
+    }
+
+    &-subtitle {
+      font-size: 20px;
+      font-weight: 600;
+      color: $primary-color;
+    }
+  }
+
+  &__text {
+    color: $gray-color-secondary;
+    font-weight: 500;
+    line-height: 21px; 
+  }
+
+  &__full-price {
+    color: $gray-color-secondary;
+    font-size: 22px;
+    font-weight: 500;
+    text-decoration-line: line-through;
+    margin-left: 8px;
+  }
+
+  &__tech-specs {
+    margin: 16px 0;
+
+    &__item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+
+      &:not(:first-child) {
+        margin-top: 8px;
+      }
+    }
+    
+    &__title {
+      color: $gray-color-secondary;
+    }
+
+    &__info {
+      color: $primary-color;
+      text-align: right;
+    }
+  }
+
+  &__products {
+    margin: 0 auto;
+
+    @include onDesktop {
+      width: 1152px;
+    }
+
+    @include onTablet {
+      width: 600px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @include onLaptop {
+      width: $laptop-width;
+    }
+
+    @include onMobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__quantities {
+      margin-bottom: 40px;
+      color: $gray-color-secondary;
+    }
+
+    &__container {
+      display: flex;
+      flex-wrap: wrap;
+  
+      & > .catalog-product {
+        margin-bottom: 40px;
+      }
+
+      @include onTablet {
+        align-items: center;
+        justify-content: space-evenly;
+      }
+
+      @include onLaptop {
+        align-items: center;
+        justify-content: center;
+      }
+
+      @include onMobile {
+        align-items: center;
+        justify-content: center;
+      }
+
+      &__cart {
+        @extend .page__products;
+        width: 1000px;
+      }
+    }
+
+    &__params {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    &__title {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__cart {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-top: 24px;
+
+    @include MobileAndTablet {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @include onLaptop {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__products {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    &__total {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-bottom: 1px solid $light-gray-color;
+      padding-bottom: 24px;
+    }
+
+    &__items {
+      color: $gray-color-secondary;
+    }
+
+    &__total__wrapper {
+      padding: 24px;
+      border: 1px solid $light-gray-color;
+    }
+
+    &__checkout {
+      width: $checkout-button-width;
+      height: 48px;
+      color: $white-color;
+      background-color: $primary-color;
+      margin-top: 24px;
+      cursor: pointer;
+
+      transition: box-shadow 0.3s;
+
+      &:hover {
+        box-shadow: $dart-box-shadow;
+      }
+
+      &__text {
+        position: relative;
+        width: $checkout-button-width;
+        padding: 32px 16px 16px;
+        border: 1px solid $light-gray-color;
+        background-color: $white-color;
+        color: $gray-color-secondary;
+        margin-top: 20px;
+      }
+
+      &__close {
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        right: 3%;
+        top: 10%;
+        cursor: pointer;
+
+        transition: background-image 0.3s ease-out;
+        background-image: url(../assets/close-icon.svg);
+        background-repeat: no-repeat;
+
+        &:hover {
+          background-image: url(../assets/close-icon-black.svg);
+        }
+      }
+    }
+  }
+
+  &__not-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__go-home {
+    @extend .page__cart__checkout;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

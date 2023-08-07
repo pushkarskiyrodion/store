@@ -1,0 +1,95 @@
+@import "../../styles/shared";
+
+.dropdown {
+  width: 100%;
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__value {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 0;
+    padding: 9px 12px;
+    cursor: pointer;
+
+    &::after {
+      content: url(../../assets/arrow-right-disabled.svg);
+      margin-right: 12px;
+      transform: rotate(90deg);
+      transition: transform 0.3s;
+    }
+
+    &--opened {
+      &::after {
+        content: url(../../assets/arrow-right.svg);
+        transform: rotate(270deg);
+      }
+    }
+
+    &__wrapper {
+      border: 1px solid $gray-color-icons;
+      transition: border 0.3s ease-out;
+
+      &:hover {
+        border-color: $gray-color-secondary;
+      }
+
+      &--active {
+        border: 1px solid $primary-color !important;
+      }
+    }
+  }
+
+  &__list {
+    position: absolute;
+    list-style: none;
+    padding: 5px 0;
+    background-color: $white-color;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    border: 1px solid $light-gray-color;
+    top: 110%;
+    right: 0;
+    left: 0;
+
+    z-index: 5;
+  }
+
+  &__sort {
+    display: flex;
+    width: 176px;
+    height: 59px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  &__per-page {
+    @extend .dropdown__sort;
+    width: 128px;
+  }
+
+  &__item {
+    padding: 6px 12px;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $gray-color-background;
+    }
+  }
+
+  &__link {
+    color: $gray-color-secondary;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}

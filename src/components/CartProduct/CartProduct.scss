@@ -1,0 +1,99 @@
+@import "../../styles/shared";
+
+.cart-product {
+  display: flex;
+  align-items: center;
+  border: 1px solid $light-gray-color;
+  padding: 24px 40px 24px 24px;
+
+  @include MobileAndTablet {
+    padding: 24px;
+  }
+
+  &__close {
+    height: 16px;
+    width: 16px;
+    background-image: url(../../assets/close-icon.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+
+    transition: background-image 0.3s ease-out;
+
+    &:hover {
+      background-image: url(../../assets/close-icon-black.svg);
+    }
+  }
+
+  &__name {
+    width: 295px;
+    color: $primary-color;
+    margin-right: 49px;
+
+    @include onLaptop {
+      width: 250px;
+    }
+
+    @include MobileAndTablet {
+      width: 200px;
+      margin-right: 20px;
+    }
+  }
+
+  &__image {
+    width: 66px;
+    height: 66px;
+    object-fit: contain;
+  }
+
+  &__quantity {
+    text-align: center;
+    width: 18px;
+  }
+
+  &__button {
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+    border: 1px solid $light-gray-color;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+
+    transition: border-color 0.3s ease-out;
+
+    &:hover {
+      border-color: $primary-color;
+    }
+
+    &--plus {
+      background-image: url(../../assets/plus.svg);
+    }
+
+    &--minus {
+      background-image: url(../../assets/minus.svg);
+
+      &-disabled {
+        background-image: url(../../assets/minus-disabled.svg);
+      }
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+
+    align-items: center;
+    gap: 31px;
+
+    @include MobileAndTablet {
+      gap: 20px;
+    }
+  }
+  
+  &__count {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-right: 43px;
+  }
+}
