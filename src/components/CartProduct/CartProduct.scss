@@ -2,12 +2,23 @@
 
 .cart-product {
   display: flex;
+  position: relative;
   align-items: center;
   border: 1px solid $light-gray-color;
   padding: 24px 40px 24px 24px;
 
   @include MobileAndTablet {
     padding: 24px;
+  }
+
+  @include onLaptop {
+    padding: 20px;
+  }
+
+  @include onMobile {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
   }
 
   &__close {
@@ -23,6 +34,12 @@
     &:hover {
       background-image: url(../../assets/close-icon-black.svg);
     }
+
+    @include onMobile {
+      position: absolute;
+      top: 43%;
+      left: 2%;
+    }
   }
 
   &__name {
@@ -31,12 +48,18 @@
     margin-right: 49px;
 
     @include onLaptop {
-      width: 250px;
+      width: 200px;
+      margin-right: 20px;
     }
 
     @include MobileAndTablet {
       width: 200px;
       margin-right: 20px;
+    }
+
+    @include onMobile {
+      margin-left: 70px;
+      margin-right: 0;
     }
   }
 
@@ -44,6 +67,12 @@
     width: 66px;
     height: 66px;
     object-fit: contain;
+
+    @include onMobile {
+      position: absolute;
+      left: 6%;
+      top: 23%;
+    }
   }
 
   &__quantity {
@@ -62,7 +91,7 @@
 
     transition: border-color 0.3s ease-out;
 
-    &:hover {
+    &:hover:not(.cart-product__button--minus-disabled) {
       border-color: $primary-color;
     }
 
@@ -75,6 +104,7 @@
 
       &-disabled {
         background-image: url(../../assets/minus-disabled.svg);
+        cursor: not-allowed;
       }
     }
   }
@@ -88,12 +118,40 @@
     @include MobileAndTablet {
       gap: 20px;
     }
+
+    @include onLaptop {
+      gap: 20px;
+    }
+
+    @include onMobile {
+      justify-content: space-around;
+    }
   }
   
   &__count {
     display: flex;
     align-items: center;
-    gap: 13px;
-    margin-right: 43px;
+    gap: 10px;
+
+    @include onMobile {
+      justify-content: space-around;
+      margin-left: 80px;
+    }
+
+    &__wrapper {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      margin-right: 43px;
+
+      @include onLaptop {
+        margin-right: 20px;
+        gap: 8px;
+      }
+  
+      @include onMobile {
+        margin: 0;
+      }
+    }
   }
 }

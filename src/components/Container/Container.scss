@@ -4,11 +4,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 40px $container-horisontal-padding;
+  padding: 40px 40px $container-fixed-padding;
 
   flex: 1 1 auto;
 
   @include onDesktop {
-    padding: 40px 80px $container-horisontal-padding;
+    padding: 40px 80px $container-fixed-padding;
   }
 }

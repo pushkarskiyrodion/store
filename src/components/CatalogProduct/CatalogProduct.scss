@@ -9,6 +9,7 @@
   max-width: 272px;
 
   transition: border-color, box-shadow 0.2s ease-out;
+  cursor: pointer;
 
   &:hover {
     border-color: $primary-color;

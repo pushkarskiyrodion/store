@@ -59,8 +59,6 @@ const App = () => {
     return <NotFound />;
   }
 
-  console.log(products)
-
   return (
     <>
       <Routes>

@@ -29,7 +29,7 @@ export const CartPage = () => {
 
   return (
     <Container>
-      <section className="page__products__cart">
+      <section className="page__cart__section">
         <BackButton />
 
         <h3 className="page__title-main">Cart</h3>

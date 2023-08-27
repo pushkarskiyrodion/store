@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useRef } from 'react';
 import './CatalogProduct.scss';
 
 import { AddItem } from 'components/AddItem';
@@ -9,6 +10,24 @@ type Props = {
 };
 
 export const CatalogProduct: React.FC<Props> = ({ catalogProduct }) => {
+  const productRef = useRef<HTMLAnchorElement>(null);
+  const buttonsRef = useRef<HTMLDivElement>(null);
+
+  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const { currentTarget, target } = e;
+
+    if (!productRef.current || !buttonsRef.current) {
+      return;
+    }
+
+    if (
+      currentTarget.contains(productRef.current) &&
+      !buttonsRef.current?.contains(target as Node)
+    ) {
+      productRef.current.click();
+    }
+  }
+
   const {
     image,
     name,
@@ -22,8 +41,12 @@ export const CatalogProduct: React.FC<Props> = ({ catalogProduct }) => {
   } = catalogProduct;
 
   return (
-    <div className="catalog-product">
-      <Link to={`/${category}/${itemId}`}>
+    <div onClick={handleClick} className="catalog-product">
+      <Link
+        ref={productRef}
+        className="catalog-product__link"
+        to={`/${category}/${itemId}`}
+      >
         <div className="catalog-product__image">
           <img src={image} alt="phone" />
         </div>
@@ -70,7 +93,9 @@ export const CatalogProduct: React.FC<Props> = ({ catalogProduct }) => {
         </div>
       </Link>
 
-      <AddItem product={catalogProduct} />
+      <div ref={buttonsRef}>
+        <AddItem product={catalogProduct} />
+      </div>
     </div>
   );
 };

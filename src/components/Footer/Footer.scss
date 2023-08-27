@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 -1px 0 0 $light-gray-color;
-  padding: 0 $container-horisontal-padding;
+  padding: 0 $container-fixed-padding;
 
   @include onMobile {
     padding: 0 40px;

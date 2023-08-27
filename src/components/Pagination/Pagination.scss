@@ -25,6 +25,12 @@
     border: 1px solid $light-gray-color;
     list-style: none;
 
+    transition: border-color 0.3s ease-out;
+
+    &:hover:not(.pagination__item--active) {
+      border-color: $primary-color;
+    }
+
     &--active {
       background-color: $primary-color;
 
@@ -47,6 +53,12 @@
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
+    
+    transition: border-color 0.3s ease-out;
+
+    &:hover:not(.pagination__button--disabled) {
+      border-color: $primary-color;
+    }
 
     &--prev {
       transform: rotate(180deg);
@@ -54,6 +66,7 @@
 
     &--disabled {
       background-image: url(../../assets/arrow-right-disabled.svg);
+      cursor: not-allowed;
     }
   }
 }

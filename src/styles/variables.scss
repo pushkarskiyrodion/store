@@ -11,9 +11,12 @@ $dart-box-shadow: 0 3px 13px rgba(23,32,49, 0.26);
 
 $padding-header: 24px;
 $product-card-margin: 8;
-$container-horisontal-padding: 80px;
+$container-fixed-padding: 80px;
 $slider-padding: 80px;
 
 $desktop-width: 1152px;
 $laptop-width: 864px;
-$checkout-button-width: 320px;
+
+$checkout-button-width-desktop: 320px;
+$checkout-button-width-laptop: 280px;
+$checkout-button-width-mobile: 260px;

@@ -18,7 +18,7 @@ const links = [
   {
     id: 3,
     title: 'Rights',
-    href: '/',
+    href: 'https://github.com/pushkarskiyrodion/react_phone-catalog',
   },
 ];
 

@@ -26,7 +26,7 @@ export const FavouritePage = () => {
           {`${favourites.length} ${items}`}
         </p>
 
-        <div className="page__products__container">
+        <div className="page__cart__list">
           {favourites.map(favourite => (
             <CatalogProduct catalogProduct={favourite} key={favourite.id} />
           ))}

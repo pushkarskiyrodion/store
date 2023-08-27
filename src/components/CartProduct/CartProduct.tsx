@@ -52,32 +52,34 @@ export const CartProduct: React.FC<Props> = ({ product }) => {
       </div>
 
       <div className="cart-product__count">
-        <button
-          aria-label="none"
-          type="button"
-          onClick={handleRemoveQuantity}
-          className={classNames('cart-product__button', {
-            'cart-product__button--minus': quantity > 1,
-            'cart-product__button--minus-disabled': quantity === 1,
-          })}
-          disabled={quantity === 1}
-        />
+        <div className="cart-product__count__wrapper">
+          <button
+            aria-label="none"
+            type="button"
+            onClick={handleRemoveQuantity}
+            className={classNames('cart-product__button', {
+              'cart-product__button--minus': quantity > 1,
+              'cart-product__button--minus-disabled': quantity === 1,
+            })}
+            disabled={quantity === 1}
+          />
 
-        <p className="cart-product__quantity">
-          {quantity}
+          <p className="cart-product__quantity">
+            {quantity}
+          </p>
+
+          <button
+            aria-label="none"
+            type="button"
+            onClick={handleAddQuantity}
+            className="cart-product__button cart-product__button--plus"
+          />
+        </div>
+
+        <p className="page__title-section">
+          {`$${price}`}
         </p>
-
-        <button
-          aria-label="none"
-          type="button"
-          onClick={handleAddQuantity}
-          className="cart-product__button cart-product__button--plus"
-        />
       </div>
-
-      <p className="page__title-section">
-        {`$${price}`}
-      </p>
     </div>
   );
 };
