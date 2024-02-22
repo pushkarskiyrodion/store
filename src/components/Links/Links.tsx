@@ -8,7 +8,7 @@ const links = [
   {
     id: 1,
     title: 'GitHub',
-    href: 'https://github.com/pushkarskiyrodion/react_phone-catalog',
+    href: 'https://github.com/pushkarskiyrodion/store',
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const links = [
   {
     id: 3,
     title: 'Rights',
-    href: 'https://github.com/pushkarskiyrodion/react_phone-catalog',
+    href: 'https://github.com/pushkarskiyrodion/store',
   },
 ];
 

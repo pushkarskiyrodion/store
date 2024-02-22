@@ -32,6 +32,7 @@ export const Authorization: React.FC<Props> = ({ toggle, navigateTo }) => {
   const [activeForm, setActiveForm] = useState<AuthEnum>(AuthEnum.LogIn);
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isWaiting, setIsWaiting] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
   const [selectedForm, setSelectedForm] = useState<Auth[] | null>(null);
   const [inputType, setInputType] = useState<'password' | 'text'>('password');
@@ -143,9 +144,12 @@ export const Authorization: React.FC<Props> = ({ toggle, navigateTo }) => {
       return;
     }
 
+    setIsWaiting(true);
+
     dispatch(authActions.authorize({ endpoint, formData }))
       .unwrap()
       .then((result) => {
+        setIsWaiting(false);
         document.body.classList.remove('page__modal--open');
         
         if (isChecked) {
@@ -315,7 +319,9 @@ export const Authorization: React.FC<Props> = ({ toggle, navigateTo }) => {
                     </div>
     
                     <button className="auth__form__submit" type="submit">
-                      {title}
+                      {!isWaiting ? title : (
+                        <img className="auth__loader auth__loader--button" src="./img/loader-auth.svg" alt="" />
+                      )}
                     </button>
                   </form>
                 )}

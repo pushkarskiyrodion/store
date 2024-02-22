@@ -21,6 +21,7 @@ export const Profile = () => {
   const [selectedField, setSelectedField] = useState(UserServerActions.About);
   const auth = useAppSelector((state) => state.auth);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isWaiting, setIsWaiting] = useState(false);
   const [userInfo, setUserInfo] = useState<UserInfo>({
     name: auth.user?.name || '',
     surname: auth.user?.surname || '',
@@ -72,6 +73,8 @@ export const Profile = () => {
   };
 
   const handleSubmit = () => {
+    setIsWaiting(true);
+
     if (selectedField === UserServerActions.About) {
       const args: IServerUpdate = {
         endpoint: selectedField,
@@ -93,7 +96,10 @@ export const Profile = () => {
         })
         .catch((err: string) => {
           setMessageFromServer(err);
-        });
+        })
+        .finally(() => {
+          setIsWaiting(false);
+        })
     } else if (selectedField === UserServerActions.Support) {
       axios
         .post(
@@ -105,7 +111,8 @@ export const Profile = () => {
           setMessageFromServer(res.data.message);
           setMessage('');
         })
-        .catch((err) => setMessageFromServer(err.response.data.message));
+        .catch((err) => setMessageFromServer(err.response.data.message))
+        .finally(() => setIsWaiting(false));
     } else if (selectedField === UserServerActions.ChangePassword) {
       const { newPassword, oldPassword } = changePassword;
 
@@ -126,7 +133,8 @@ export const Profile = () => {
             newPassword: '',
           }))
         })
-        .catch((err) => setMessageFromServer(err.response.data.message));
+        .catch((err) => setMessageFromServer(err.response.data.message))
+        .finally(() => setIsWaiting(false));
     }
   };
 
@@ -358,7 +366,11 @@ export const Profile = () => {
             </div>
           )}
 
-          <h2 className="profile__message--server">{messageFromServer}</h2>
+          <h2 className="profile__message--server">
+            {isWaiting ? (
+              <img className="auth__loader" src="./img/loader-auth.svg" alt="" />
+            ) : messageFromServer}
+          </h2>
 
           <div className="profile__button__container">
             <button

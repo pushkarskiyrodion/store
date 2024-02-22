@@ -118,7 +118,8 @@
     &__submit {
       background-color: $primary-color;
       color: $white-color;
-      display: block;
+      display: flex;
+      justify-content: center;
       margin: 15px 0;
       padding: 8px 0;
       width: 100%;
@@ -186,6 +187,10 @@
 
   &__loader {
     animation: 1s linear 0.1s infinite reverse rotate;
+
+    &--button {
+      height: 21px;
+    }
 
     &__wrapper {
       display: flex;
