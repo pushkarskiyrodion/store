@@ -1,21 +1,31 @@
 import { useAppSelector } from 'app/hooks/redux';
+import { useNavigate } from 'react-router-dom';
+
 import { BackButton } from 'components/Buttons/BackButton';
 import { CartProduct } from 'components/CartProduct';
 import { Container } from 'components/Container/Container';
 import { EmptyCart } from 'components/ErrorPages/EmptyCart';
-import { useState } from 'react';
 
-export const CartPage = () => {
+type Props = {
+  onSetAuthNavigateTo: React.Dispatch<React.SetStateAction<string>>,
+  handleOpenAuth: React.Dispatch<React.SetStateAction<boolean>>,
+}
+
+export const CartPage: React.FC<Props> = ({ handleOpenAuth, onSetAuthNavigateTo }) => {
   const cart = useAppSelector(state => state.cart);
-  const [isClicked, setisClicked] = useState(false);
+  const auth = useAppSelector(state => state.auth);
+  const navigate = useNavigate();
 
-  const handleClick = () => {
-    setisClicked(true);
-  };
+  const handleClick = () => {    
+    if (!auth.isAuthorized) {
+      onSetAuthNavigateTo('/checkout?step=1')
+      handleOpenAuth(true);
 
-  const handleCloseMessage = () => {
-    setisClicked(false);
-  };
+      return;
+    }
+
+    navigate('/checkout?step=1')
+  }
 
   const total = cart.reduce((acum, curr) => (
     acum + (curr.price * (curr.quantity || 1))
@@ -56,24 +66,12 @@ export const CartPage = () => {
             </div>
 
             <button
-              className="page__cart__checkout"
+              className="page__button page__cart__checkout"
               type="button"
               onClick={handleClick}
             >
               Checkout
             </button>
-
-            {isClicked && (
-              <div className="page__cart__checkout__text">
-                We are sorry, but this feature is not implemented yet
-                <button
-                  className="page__cart__checkout__close"
-                  type="button"
-                  aria-label="none"
-                  onClick={handleCloseMessage}
-                />
-              </div>
-            )}
           </div>
         </div>
       </section>

@@ -1,0 +1,238 @@
+@import "../../styles/shared";
+
+.auth {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+  position: fixed;
+  z-index: 15;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background-color: rgba(0,0,0,.7);
+
+  animation-name: color;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+
+
+  &__wrapper {  
+    animation-name: showUp;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+  }
+
+  &__main {
+    background-color: $gray-color-background;
+    border: 1px solid $primary-color;
+    width: 400px;
+
+    @media (max-width: 450px) {
+      width: 300px;
+    }
+  }
+
+  &--sign-up {
+    animation-name: heightUp1;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+  }
+
+  &--log-in {
+    animation-name: heightUp2;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+  }
+
+  &__container {
+    margin-bottom: 50px;
+
+    transition: height 0.25s ease-out;
+
+    &--form {
+      transition: height 0.2s ease-in-out;
+      padding: 10px 20px 0;
+    }
+
+    &--close {
+      text-align: end;
+    }
+
+    &--input {
+      display: flex;
+      margin: 10px 0;
+    }
+  }
+
+  &__header {
+    display: flex;
+    background-color: rgba($primary-color-rgb, 0.7);
+
+    &__button {
+      width: 50%;
+      padding: 10px;
+      color: $gray-color-background;
+      color: $white-color;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+
+    &__label {
+      &--error {
+        color: $red-color;
+      }
+
+      &--checkbox {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+    }
+
+    &__input {
+      width: 100%;
+      height: 35px;
+      text-indent: 20px;
+      background-color: $light-gray-color;
+      outline: none;
+
+      &--error {
+        border: 1px solid $red-color;
+      }
+    }
+
+    &__password {
+      flex-grow: 1;
+    }
+
+    &__checkbox {
+      appearance: auto;
+    }
+
+    &__submit {
+      background-color: $primary-color;
+      color: $white-color;
+      display: block;
+      margin: 15px 0;
+      padding: 8px 0;
+      width: 100%;
+
+      transition: box-shadow, 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        box-shadow: $dark-box-shadow;
+      }
+    }
+  }
+
+  &__close {
+    background-image: url(../../assets/auth-close-icon.svg);
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+
+    transition: background-image 0.3s ease-out;
+
+    &:hover {
+      background-image: url(../../assets/auth-close-icon-black.svg);
+    }
+  }
+
+  &__show-password {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-left: 0.5px solid $gray-color-icons;
+    background-color: $light-gray-color;
+
+    cursor: pointer;
+
+    &--error {
+      border-color: $red-color;
+    }
+  }
+
+  &--active {
+    background-color: $gray-color-background;
+    color: $primary-color;
+
+    background-color: $white-color;
+    color: $primary-color;
+  }
+
+  &--hidden {
+    display: none;
+  }
+
+  &__error {
+    height: 21px;
+    color: $red-color;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  }
+
+  &__loader {
+    animation: 1s linear 0.1s infinite reverse rotate;
+
+    &__wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      z-index: 20;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+}
+
+@keyframes heightUp1 {
+  from {
+    height: 0;
+  }
+  to {
+    height: 402px;
+  }
+}
+
+@keyframes heightUp2 {
+  from {
+    height: 0;
+  }
+  to {
+    height: 250px;
+  }
+}
+
+@keyframes color {
+  from {
+    background-color: rgba(0,0,0,.1);
+  }
+  to {
+    background-color: rgba(0,0,0,.7);
+  }
+}
+
+@keyframes showUp {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

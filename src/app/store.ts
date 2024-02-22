@@ -6,6 +6,7 @@ import {
   configureStore,
   MiddlewareAPI,
 } from '@reduxjs/toolkit';
+import authReducer from 'features/authReducer';
 import cartReducer from 'features/cartReducer';
 import favouriteReducer from 'features/favouriteReducer';
 import productsReducer from 'features/productsReducer';
@@ -38,6 +39,7 @@ const store = configureStore({
     products: productsReducer,
     cart: cartReducer,
     favourite: favouriteReducer,
+    auth: authReducer,
   },
   preloadedState: initialState,
   middleware: (getDefaultMiddleware) => (

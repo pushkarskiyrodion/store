@@ -60,13 +60,11 @@ export const HomePage: React.FC<Props> = React.memo(({ products }) => {
   }, [products]);
 
   return (
-    <main>
-      <Container>
-        <InfiniteSlider images={banners} />
-        <ProductsSlider title="Hot prices" products={productsHotPrice} />
-        <ShopByCategory products={products} />
-        <ProductsSlider title="Brand new models" products={brandNewModels} />
-      </Container>
-    </main>
+    <Container>
+      <InfiniteSlider images={banners} />
+      <ProductsSlider title="Hot prices" products={productsHotPrice} />
+      <ShopByCategory products={products} />
+      <ProductsSlider title="Brand new models" products={brandNewModels} />
+    </Container>
   );
 });

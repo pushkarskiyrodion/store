@@ -48,6 +48,10 @@
     display: flex;
     padding: 24px;
 
+    @include onMobile {
+      padding: 24px 20px;
+    }
+
     &--search {
       &::after {
         width: 16px;

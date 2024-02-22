@@ -59,6 +59,12 @@ export const ProductDetails: React.FC<Props> = ({ productsCategory }) => {
       model.id === productId
     ));
 
+    if (productId !== product?.id && isNewProduct && sameModels) {
+      const selectedProduct = sameModels.find(model => model.id === productId);
+
+      setProduct(selectedProduct || product);
+    }
+
     if (!isNewProduct) {
       fetchData();
 
@@ -103,6 +109,18 @@ export const ProductDetails: React.FC<Props> = ({ productsCategory }) => {
     capacity: productCapacity,
   } = product;
 
+  const handleNextPhoto = () => {
+    setCurrentPhoto(current => (
+      current >= images.length - 1 ? 0 : current + 1
+    ))
+  }
+
+  const handlePrevPhoto = () => {
+    setCurrentPhoto(current => (
+      current <= 0 ? images.length - 1 : current - 1
+    ))
+  }
+
   const currentProduct = productsCategory.find(({ phoneId }) => (
     phoneId === productId
   )) || null;
@@ -130,7 +148,7 @@ export const ProductDetails: React.FC<Props> = ({ productsCategory }) => {
 
       <BackButton />
 
-      <h3 className="page__title-main">{name}</h3>
+      <h3 className="page__title-main product-details__title">{name}</h3>
 
       <div className="product-details__main">
         <div className="product-details__header">
@@ -153,7 +171,19 @@ export const ProductDetails: React.FC<Props> = ({ productsCategory }) => {
             </div>
 
             <div className="product-details__image__main">
-              <img src={images[currentPhoto]} alt="" />
+              <button
+                className="product-details__button product-details__button--next"
+                onClick={handlePrevPhoto}
+              />
+
+              <div className="product-details__image__wrapper">
+                <img className="product-details__image" src={images[currentPhoto]} alt="" />
+              </div>
+
+              <button
+                className="product-details__button product-details__button--prev"
+                onClick={handleNextPhoto}
+              />
             </div>
           </div>
 

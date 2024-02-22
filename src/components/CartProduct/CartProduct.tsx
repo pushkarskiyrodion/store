@@ -4,6 +4,7 @@ import './CartProduct.scss';
 import { actions as cartActions } from 'features/cartReducer';
 import { useAppDispatch } from 'app/hooks/redux';
 import { ICartProduct } from 'types/ICartProduct';
+import { Link } from 'react-router-dom';
 
 type Props = {
   product: ICartProduct,
@@ -16,6 +17,8 @@ export const CartProduct: React.FC<Props> = ({ product }) => {
     name,
     price,
     quantity,
+    phoneId,
+    category,
   } = product;
 
   const handleAddQuantity = () => {
@@ -40,11 +43,13 @@ export const CartProduct: React.FC<Props> = ({ product }) => {
           onClick={handleDelete}
         />
 
-        <img
-          className="cart-product__image"
-          src={image}
-          alt={name}
-        />
+        <Link to={`/${category}/${phoneId}`}>
+          <img
+            className="cart-product__image"
+            src={image}
+            alt={name}
+          />
+        </Link>
 
         <p className="cart-product__name">
           {name}
@@ -76,8 +81,8 @@ export const CartProduct: React.FC<Props> = ({ product }) => {
           />
         </div>
 
-        <p className="page__title-section">
-          {`$${price}`}
+        <p className="page__title-section cart-product__total">
+          {`$${quantity * price}`}
         </p>
       </div>
     </div>

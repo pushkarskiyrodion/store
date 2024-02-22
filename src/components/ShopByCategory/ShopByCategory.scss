@@ -33,12 +33,16 @@
   &__link {
     width: 33%;
 
-    @include MobileAndTablet {
-      width: 100%;
-    }
-
     &:not(:last-child) {
       margin-right: 16px;
+    }
+
+    @include MobileAndTablet {
+      width: 100%;
+      
+      &:nth-child(n) {
+        margin-right: 0;
+      }
     }
   }
 

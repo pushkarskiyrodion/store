@@ -81,8 +81,8 @@ export const Menu = () => {
   ));
 
   return (
-    <div ref={containerRef}>
-      {screenWidth < 950 ? (
+    <nav className="menu" ref={containerRef}>
+      {screenWidth < 1100 ? (
         <MenuMobile
           isOpen={isOpen}
           toggle={toggle}
@@ -97,12 +97,10 @@ export const Menu = () => {
           }
         />
       ) : (
-        <nav className="menu">
-          <ul className="menu__list">
-            {menuItems}
-          </ul>
-        </nav>
+        <ul className="menu__list">
+          {menuItems}
+        </ul>
       )}
-    </div>
+    </nav>
   );
 };

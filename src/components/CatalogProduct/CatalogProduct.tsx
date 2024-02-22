@@ -14,16 +14,13 @@ export const CatalogProduct: React.FC<Props> = ({ catalogProduct }) => {
   const buttonsRef = useRef<HTMLDivElement>(null);
 
   const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    const { currentTarget, target } = e;
+    const isButtonClicked = buttonsRef.current?.contains(e.target as Node);
 
-    if (!productRef.current || !buttonsRef.current) {
+    if (!productRef.current) {
       return;
     }
 
-    if (
-      currentTarget.contains(productRef.current) &&
-      !buttonsRef.current?.contains(target as Node)
-    ) {
+    if (!isButtonClicked && !productRef.current.contains(e.target as Node)) {
       productRef.current.click();
     }
   }
@@ -93,7 +90,7 @@ export const CatalogProduct: React.FC<Props> = ({ catalogProduct }) => {
         </div>
       </Link>
 
-      <div ref={buttonsRef}>
+      <div ref={buttonsRef} className="catalog-product__button">
         <AddItem product={catalogProduct} />
       </div>
     </div>

@@ -67,11 +67,11 @@
     margin: 0 auto;
 
     @include onDesktop {
-      width: 1152px;
+      width: $desktop-width;
     }
 
     @include onTablet {
-      width: 576px;
+      width: $tablet-width;
       display: flex;
       flex-direction: column;
     }
@@ -96,13 +96,43 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-  
-      & > .catalog-product {
-        margin-bottom: 40px;
-      }
 
       @include onMobile {
         justify-content: center;
+      }
+
+      @media (max-width: 640px) {
+        & {
+          flex-direction: column;
+        }
+      }
+
+      & > .catalog-product {
+        margin-bottom: 40px;
+
+        @include onDesktop {
+          &:nth-child(4n) {
+            margin-right: 0;
+          }
+        }
+
+        @include onLaptop {
+          &:nth-child(3n) {
+            margin-right: 0;
+          }
+        }
+
+        @media (min-width: 640px) and (max-width: 950px) {
+          &:nth-child(2n) {
+            margin-right: 0;
+          }
+        }
+        
+        @media (max-width: 640px) {
+          &:nth-child(1n) {
+            margin-right: 0;
+          }
+        }
       }
 
       &__cart {
@@ -128,13 +158,14 @@
     gap: 16px;
     margin-top: 24px;
 
-    @include MobileAndTablet {
-      flex-direction: column;
-      align-items: center;
+    @media (max-width: 1060px) {
+      & {
+        flex-direction: column;
+        align-items: center;
+      }
     }
 
     &__list {
-      @extend .page__products__container;
       display: flex;
       flex-direction: row-reverse;
       flex-wrap: wrap;
@@ -148,6 +179,34 @@
 
       & > .catalog-product:last-child {
         margin-right: 16px;
+      }
+
+      & > .catalog-product {
+        margin-bottom: 40px;
+
+        @media (min-width: 640px) and (max-width: 950px) {
+          &:nth-child(2n + 1) {
+            margin-right: 0;
+          }
+        }
+
+        @include onDesktop {
+          &:nth-child(4n + 1) {
+            margin-right: 0;
+          }
+        }
+
+        @include onLaptop {
+          &:nth-child(3n + 1) {
+            margin-right: 0;
+          }
+        }
+
+        @media (max-width: 730px) {
+          &:nth-child(1n) {
+            margin-right: 0;
+          }
+        }
       }
     }
 
@@ -175,6 +234,8 @@
       padding-bottom: 24px;
 
       &__wrapper {
+        display: flex;
+        flex-direction: column;
         position: sticky;
         top: 26px;
         padding: 24px;
@@ -184,6 +245,10 @@
 
     &__items {
       color: $gray-color-secondary;
+
+      &__link {
+        text-decoration: underline;
+      }
     }
 
     &__checkout {
@@ -194,8 +259,6 @@
       background-color: $primary-color;
       margin-top: 24px;
       cursor: pointer;
-      
-      transition: box-shadow, width, 0.3s;
 
       @include onLaptop {
         width: $checkout-button-width-laptop;
@@ -207,10 +270,6 @@
 
       @include onMobile {
         width: $checkout-button-width-mobile;
-      }
-
-      &:hover {
-        box-shadow: $dart-box-shadow;
       }
 
       &__text {
@@ -246,6 +305,58 @@
     }
   }
 
+  &__label {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+
+    &--error {
+      color: $red-color;
+    }
+  }
+
+  &__input {
+    background: #fff;
+    border: 1px solid #dbdce0;
+    border-radius: 0;
+    height: 35px;
+    padding-left: 10px;
+    width: 100%;
+
+    outline: none;
+
+    &:focus {
+      border-color: $primary-color;
+    }
+
+    &--error {
+      border-color: $red-color;
+    }
+
+    &--disabled {
+      border-color: #abb0b3;
+      background-color: rgb(221 221 221 / 30%);
+    }
+  }
+
+  &__button {
+    display: block;
+    height: 48px;
+    color: $white-color;
+    background-color: $primary-color;
+    cursor: pointer;
+
+    transition: box-shadow, 0.3s ease-in-out;
+
+    &:hover {
+      box-shadow: $dark-box-shadow;
+    }
+  }
+
   &__not-found {
     display: flex;
     flex-direction: column;
@@ -259,5 +370,56 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  &__close {
+    background-image: url(../assets/auth-close-icon.svg);
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+
+    transition: background-image 0.3s ease-out;
+
+    &:hover {
+      background-image: url(../assets/auth-close-icon-black.svg);
+    }
+  }
+
+  &__modal {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    position: fixed;
+    z-index: 15;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  
+    background-color: rgba(0,0,0,.7);
+  
+    animation-name: color;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+
+    &--open {
+      overflow: hidden;
+    }
+  }
+}
+
+@keyframes color {
+  from {
+    background-color: rgba(0,0,0,.1);
+  }
+  to {
+    background-color: rgba(0,0,0,.7);
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
   }
 }

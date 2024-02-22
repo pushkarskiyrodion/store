@@ -91,6 +91,11 @@
 
     transition: border-color 0.3s ease-out;
 
+    @include onMobile {
+      width: 28px;
+      height: 28px;
+    }
+
     &:hover:not(.cart-product__button--minus-disabled) {
       border-color: $primary-color;
     }
@@ -124,7 +129,7 @@
     }
 
     @include onMobile {
-      justify-content: space-around;
+      justify-content: center;
     }
   }
   
@@ -152,6 +157,17 @@
       @include onMobile {
         margin: 0;
       }
+    }
+  }
+
+  &__total {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 90px;
+
+    @include onMobile {
+      font-size: 20px;
     }
   }
 }

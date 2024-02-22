@@ -46,10 +46,14 @@ export const InfiniteSlider: React.FC<Props> = ({ images }) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    initialSlide: 0,
     nextArrow: <Next />,
     prevArrow: <Prev />,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2000,
+    useTransform: false,
+    swipe: true,
+    swipeToSlide: true, 
   };
 
   return (

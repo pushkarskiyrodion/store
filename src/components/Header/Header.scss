@@ -9,6 +9,22 @@
   background-color: $white-color;
   box-shadow: 0 1px 0 $light-gray-color;
 
+  &__sign-out {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $primary-color;
+    box-shadow: -1px 0 0 $light-gray-color;
+    padding: $padding-header;
+    cursor: pointer;
+
+    transition: background-color 0.2s ease-in;
+
+    &:hover {
+      background-color: $gray-color-background;
+    }
+  }
+
   &__info {
     display: flex;
     align-items: center;

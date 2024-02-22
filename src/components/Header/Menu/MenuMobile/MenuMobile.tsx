@@ -17,9 +17,9 @@ export const MenuMobile: React.FC<Props> = ({ element, isOpen, toggle }) => {
           'menu--mobile--opened': isOpen,
         })}
       >
-        <div className="menu__burger" />
-        <div className="menu__burger" />
-        <div className="menu__burger" />
+        <span className="menu__burger" />
+        <span className="menu__burger" />
+        <span className="menu__burger" />
       </button>
 
       {isOpen && (

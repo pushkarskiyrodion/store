@@ -1,6 +1,6 @@
-# Catalog Project
+# Store Project
 
-Welcome to the Device Catalog project! This is a web application that allows users to explore a variety of devices and products, add them to their favorite list or shopping cart, and have these selections saved in their local storage for a seamless user experience.
+Welcome to the Store project! This is a web application that allows users to explore a variety of devices and products, add them to their favorite list or shopping cart, and have these selections saved in their local storage for a seamless user experience.
 
 Check out the [DEMO LINK](https://pushkarskiyrodion.github.io/phone_catalog-react/) to see the live version of the Catalog project.
 
@@ -8,11 +8,11 @@ Check out the [DEMO LINK](https://pushkarskiyrodion.github.io/phone_catalog-reac
 + Device Catalog: Browse and explore a diverse range of devices.
 + Favorites: Add products to your favorites list for quick access.
 + Shopping Cart: Build your shopping cart and proceed to checkout.
++ Authentication: Includes an authentication feature for user login and sign up.
++ User Cabinet: Users can now change their information in the user cabinet.
++ Purchasing and Buying Forms: Improved forms for a smoother purchasing process.
 + Local Storage: All your selections are saved in your local storage for persistent user experience.
 + Redux State Management: Utilizes Redux for efficient state management.
-+ React Components: Developed using React components for modularity and reusability.
-+ TypeScript: Written in TypeScript for improved code quality and maintainability.
-+ SCSS: Styled using SCSS for a clean and organized UI.
 
 ## Getting Started
 Prerequisites
@@ -38,6 +38,13 @@ Node.js and npm: Make sure you have Node.js and npm (Node Package Manager) insta
 ### Searching
 Enter keywords in the search bar to find specific devices that match your query.
 
+
+### User Authentication and Cabinet
++ Utilize the authentication feature for both login and sign-up processes.
++ Upon successful registration, gain access to the user cabinet.
++ Navigate to the user cabinet to modify personal information.
+
+
 ### Managing Favorites
 + To add a device to your favorites, click the heart icon on the device.
 + To view your favorite devices, navigate to the "Favorites" section.
@@ -52,6 +59,9 @@ Enter keywords in the search bar to find specific devices that match your query.
 + React
 + Redux
 + TypeScript
++ Node.js
++ Express.js
++ MongoDB
 + SCSS
 
 ## Contributing

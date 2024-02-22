@@ -1,0 +1,110 @@
+@import "../../../styles/_shared.scss";
+
+.pay {
+  display: flex;
+  flex-direction: column;
+
+  &__card {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0 40px;
+
+    &__container {
+      display: flex;
+      gap: 20px;
+
+      @include onMobile {
+        gap: 13px;
+      }
+    }
+  }
+
+  &__text {
+    color: $primary-color;
+    font-weight: 500;
+    font-size: 18px;
+
+    &--selected {
+      font-weight: 600;
+    }
+
+    &--error {
+      color: $red-color;
+    }
+  }
+
+  &__input {
+    padding: 7px 0;
+    font-size: 18px;
+    border-bottom: 1px solid rgba($primary-color-rgb, 0.4);
+
+    outline: none;
+
+    &--selected {
+      border-color: rgba($primary-color-rgb, 1);
+    }
+
+    &--error {
+      border-color: $red-color;
+
+      &::placeholder {
+        color: $red-color;
+      }
+    }
+  }
+
+  &__expiration {
+    display: flex;
+    flex-direction: column;
+
+    &-input {
+      @extend .pay__input;
+      max-width: 67px;
+      text-align: center;
+      text-indent: 0;
+    }
+  }
+
+  &__cvv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-input {
+      @extend .pay__input;
+      max-width: 68px;
+      text-align: center;
+      text-indent: 4px;
+      letter-spacing: 4px;
+    }
+  }
+
+  &__cardholder-input {
+    @extend .pay__input;
+  }
+
+  &__card-input {
+    @extend .pay__input;
+    letter-spacing: 4px;
+    max-width: 80px;
+    text-indent: 10px;
+    
+    @include onTablet {
+      max-width: 50px;
+      letter-spacing: 2px;
+      text-indent: 2px;
+    }
+
+    @include onMobile {
+      max-width: 42px;
+      letter-spacing: 1px;
+      text-indent: 0px;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0 0;
+  }
+}

@@ -1,21 +1,24 @@
 $primary-color: #313237;
+$primary-color-rgb: rgba(49, 50, 55);
 $white-color: #fff;
 $gray-color-secondary: #89939a;
 $gray-color-icons: #b4bdc3;
 $gray-color-background: #fafbfc;
 $light-gray-color: #e2e6e9;
 $red-color: #eb5757;
+$yellow-color: #ffcd00;
 $green-color: #27ae60;
 
-$dart-box-shadow: 0 3px 13px rgba(23,32,49, 0.26);
+$dark-box-shadow: 0 3px 13px rgba(23,32,49, 0.26);
 
 $padding-header: 24px;
 $product-card-margin: 8;
 $container-fixed-padding: 80px;
 $slider-padding: 80px;
 
-$desktop-width: 1152px;
-$laptop-width: 864px;
+$desktop-width: 1136px;
+$laptop-width: 848px;
+$tablet-width: 560px;
 
 $checkout-button-width-desktop: 320px;
 $checkout-button-width-laptop: 280px;

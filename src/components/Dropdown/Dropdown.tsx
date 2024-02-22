@@ -82,7 +82,7 @@ export const Dropdown: React.FC<Props> = React.memo(({
             })}
             onClick={toggle}
           >
-            {selected}
+            {selected[0].toUpperCase() + selected.slice(1)}
           </button>
         </div>
 
@@ -91,7 +91,7 @@ export const Dropdown: React.FC<Props> = React.memo(({
             {Object.entries(dropdownList).map(([key, value]) => {
               const visibleValue = Number(value) ? value : key;
 
-              if (selected === visibleValue) {
+              if (selected === value || selected === key) {
                 return;
               }
 

@@ -30,9 +30,8 @@ export const ProductPage: React.FC<Props> = ({ productsCategory, title }) => {
   const perPage = searchParams.get('perPage') || '';
   const query = searchParams.get('query') || '';
   const sort = searchParams.get('sort') || '';
-
   const perPageNum = parseInt(perPage, 10) || productsCategory.length;
-  let pages = Math.ceil(productsCategory.length / perPageNum);
+  const [pages, setPages] = useState(Math.ceil(productsCategory.length / perPageNum))
 
   const setSearchWith = (params: QueryParams) => {
     const search = getSearchWith(params, searchParams);
@@ -100,9 +99,9 @@ export const ProductPage: React.FC<Props> = ({ productsCategory, title }) => {
       productsCopy = productsCopy.filter(product => {
         return product.name.toLowerCase().includes(query.toLowerCase());
       });
-
-      pages = Math.ceil(productsCopy.length / perPageNum) || 1;
     }
+
+    setPages(Math.ceil(productsCopy.length / perPageNum) || 1)
 
     return productsCopy.slice(startIndex, endIndex);
   }, [productsCategory, sort, perPage, page, query]);
@@ -114,6 +113,9 @@ export const ProductPage: React.FC<Props> = ({ productsCategory, title }) => {
   if (isPaginationChanged) {
     return <Loader />;
   }
+
+  const sortValue = sort ? sort[0].toUpperCase() + sort.slice(1) : Sort.Newest;
+  const perPageValue = perPage ? perPage : EnumPagination.Sixteen;
 
   return (
     <Container>
@@ -135,7 +137,7 @@ export const ProductPage: React.FC<Props> = ({ productsCategory, title }) => {
               dropdownList={Sort}
               title="Sort by"
               onSelectHandler={handleSelectSort}
-              initialValue="Newest"
+              initialValue={sortValue}
             />
           </div>
 
@@ -144,7 +146,7 @@ export const ProductPage: React.FC<Props> = ({ productsCategory, title }) => {
               dropdownList={EnumPagination}
               title="Items on page"
               onSelectHandler={handleSelectItemOnPage}
-              initialValue={EnumPagination.Sixteen}
+              initialValue={perPageValue}
             />
           </div>
         </div>

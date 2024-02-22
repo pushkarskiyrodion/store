@@ -1,0 +1,146 @@
+@import "../../styles/_shared.scss";
+
+.checkout {
+  display: flex;
+  justify-content: center;
+  padding: 20px 40px 40px;
+  flex-grow: 1;
+
+  @include onMobile {
+    padding: 20px 10px 40px;
+  }
+
+  &__main {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__header {
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  &__container {
+    margin: 30px 0;
+    padding: 0 80px;
+
+    @include MobileAndTablet {
+      padding: 0 20px;
+    }
+
+    @include MobileAndTablet {
+      padding: 0;
+    }
+  }
+
+  &__button {
+    display: block;
+    width: 320px;
+    height: 48px;
+    color: $white-color;
+    margin-top: 24px;
+    background-color: $primary-color;
+    cursor: pointer;
+    transition: box-shadow, width, 0.3s;
+
+    @include onMobile {
+      width: 200px;
+    }
+
+    &-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__step-line {
+    position: relative;
+    top: calc(48px / 3);
+    height: 1px;
+    flex: 1 1 1px;
+    border-bottom: 2px solid $gray-color-secondary;
+
+    &--passed {
+      border-color: $yellow-color;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0 10px;
+    font-size: 17px;
+    height: 32px;
+    width: 32px;
+    border: 2px solid $gray-color-secondary;
+    border-radius: 50%;
+    font-weight: bold;
+
+    &--active {
+      border-color: $yellow-color;
+    }
+
+    &--passed {
+      background-color: $yellow-color;
+      border-color: $yellow-color;
+
+      &::before {
+        position: absolute;
+        content: url(../../assets/checked-tick.svg);
+        bottom: 0;
+        left: 5px;
+      }
+
+      & > span {
+        display: none;
+      }
+    }
+
+    &__text {
+      line-height: 30px;
+    }
+  }
+
+  &__payment-system {
+    display: flex;
+    margin-left: 5px;
+    border: 1px solid $primary-color;
+  }
+
+  &__info {
+    &__title {
+      font-size: 16px;
+      margin: 20px 0;
+    }
+  }
+
+  &__label {
+    gap: 0;
+  }
+
+  &__completed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__title {
+      margin: 20px 0;
+      font-size: 26px;
+    }
+
+    &__image {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+      object-position: center;
+
+      &__container {
+        height: 500px;
+      }
+    }
+  }
+}

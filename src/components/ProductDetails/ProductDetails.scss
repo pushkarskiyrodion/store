@@ -14,25 +14,42 @@
     flex-direction: column;
     align-items: center;
   }
+
+  @include onTablet {
+    margin: 24px 30px 0;
+  }
   
   @include onLaptop {
     padding: 0 50px;
   }
 
+  &__title {
+    @include onMobile {
+      text-align: center;
+    }
+  }
+
   &__thumbnails {
     position: relative;
+    flex-shrink: 0;
     display: flex;
     flex-direction: column;
     overflow: scroll;
 
     @include onMobile {
-      margin-top: 10px;
       flex-direction: row;
+      overflow: hidden;
     }
   }
   
   &__main {
     margin-top: 40px;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
     & > .product-slider {
       padding-bottom: $slider-padding;
@@ -40,6 +57,7 @@
   }
 
   &__header {
+    position: relative;
     display: flex;
 
     @include MobileAndTablet {
@@ -59,11 +77,15 @@
   }
 
   &__data {
-    width: 40%;
+    width: 45%;
+
+    @include MobileAndTablet {
+      width: 100%;
+      margin-top: 20px;
+    }
 
     @include onMobile {
       width: 70%;
-      margin-top: 20px;
     }
   }
 
@@ -71,15 +93,14 @@
     &__item {
       display: flex;
       height: 20%;
-      padding: 10px;
+      padding: 5px;
 
       @include onMobile {
-        height: auto;
+        height: 75px;
       }
 
       & > img {
         width: 47px;
-        height: 73px;
         object-fit: contain;
       }
     }
@@ -128,40 +149,45 @@
   }
 
   &__image {
+    width: 100%;
+    object-fit: contain;
+    height: 442px;
+
+    &__wrapper {
+      height: 100%;
+    }
+
     &__container {
       display: flex;
-      width: 45%;
+      width: 50%;
       height: 464px;
       margin-right: 64px;
 
       @include MobileAndTablet {
-        width: auto;
-        margin-right: 0;
+        width: 100%;
+        margin: 0;
       }
 
       @include onMobile {
         flex-direction: column-reverse;
         align-items: center;
-        height: 540px;
+        height: 550px;
       }
     }
 
     &__main {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
+      gap: 10px;
       width: 442px;
-      height: 442px;
-      padding: 0 40px;
+      margin-left: 20px;
 
       @include onMobile {
-        width: auto;
-      }
-
-      & > img {
-        height: 100%;
-        width: 100%;
-        object-fit: contain;
+        height: 442px;
+        flex-shrink: 1;
+        max-width: 355px;
+        margin: 0 0 30px;
       }
     }
   }
@@ -245,14 +271,51 @@
   }
 
   &__id {
-    width: 15%;
+    position: absolute;
+    top: -40px;
+    right: 0;
     color: $gray-color-icons;
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 400;
 
     @include MobileAndTablet {
+      position: static;
       width: auto;
       margin-top: 15px;
+    }
+  }
+
+  &__button {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    min-width: 32px;
+    height: 25%;
+    border: 1px solid $light-gray-color;
+    padding: 0;
+    background-position: center;
+    transition: all 0.3s ease;
+  
+    background-image: url("../../assets/arrow-right.svg");
+    transform: rotate(180deg);
+  
+    &--prev {
+      transform: rotate(0deg);
+      left: -16px;
+    }
+  
+    &--next {
+      right: -16px;
+    }
+  
+    &:hover {
+      border-color: $primary-color;
+      cursor: pointer;
+    }
+  }
+
+  & > .user-location {
+    @include onMobile {
+      padding-bottom: 20px;
     }
   }
 }
