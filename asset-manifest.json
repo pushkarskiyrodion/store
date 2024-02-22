@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/store/static/css/main.da617e0a.css",
+    "main.js": "/store/static/js/main.27fa8ce9.js",
+    "static/media/Mont-Regular.otf": "/store/static/media/Mont-Regular.1d26d89f7339866d3133.otf",
+    "static/media/Mont-Bold.otf": "/store/static/media/Mont-Bold.03c8c2f6127c1da0fc39.otf",
+    "static/media/slick.svg": "/store/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/store/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/store/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/favorite-icon.svg": "/store/static/media/favorite-icon.0cbe1abbd22d53b45195.svg",
+    "static/media/slick.woff": "/store/static/media/slick.295183786cd8a1389865.woff",
+    "static/media/search.svg": "/store/static/media/search.eb670dd9ac01a47e6e00.svg",
+    "static/media/favourite-icon-filled.svg": "/store/static/media/favourite-icon-filled.231f6119012e92a707d7.svg",
+    "static/media/checked-tick.svg": "/store/static/media/checked-tick.35290072c4b890b4abb2.svg",
+    "static/media/auth-close-icon-black.svg": "/store/static/media/auth-close-icon-black.e334a991da5218cdf893.svg",
+    "static/media/auth-close-icon.svg": "/store/static/media/auth-close-icon.b9faf6e04fcfa2dbbd3c.svg",
+    "static/media/close-icon-black.svg": "/store/static/media/close-icon-black.1b0301569b4cc6e01cc1.svg",
+    "static/media/close-icon.svg": "/store/static/media/close-icon.ee43428f420208c9b605.svg",
+    "static/media/plus.svg": "/store/static/media/plus.dea157243cc9d361ac05.svg",
+    "static/media/arrow-right-disabled.svg": "/store/static/media/arrow-right-disabled.08f872a353985d8425b8.svg",
+    "static/media/arrow-right.svg": "/store/static/media/arrow-right.be644ae5b1f3898026de.svg",
+    "index.html": "/store/index.html",
+    "static/media/minus-disabled.svg": "/store/static/media/minus-disabled.b79ff45de25f74a2a469.svg",
+    "static/media/minus.svg": "/store/static/media/minus.cecb4be39afa7b933ec1.svg",
+    "main.da617e0a.css.map": "/store/static/css/main.da617e0a.css.map",
+    "main.27fa8ce9.js.map": "/store/static/js/main.27fa8ce9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.da617e0a.css",
+    "static/js/main.27fa8ce9.js"
+  ]
+}
