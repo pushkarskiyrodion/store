@@ -258,7 +258,7 @@ export const Pay: React.FC<Props> = ({
         type="text"
         id="cardholder-name"
         name="cardHolderName"
-        className={classNames('pay__cardholder-input', {
+        className={classNames('pay__input', {
           'pay__input--selected':
             selectedInput === cardholderNameRef.current &&
             cardholderNameRef.current,

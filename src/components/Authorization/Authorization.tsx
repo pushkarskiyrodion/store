@@ -149,7 +149,6 @@ export const Authorization: React.FC<Props> = ({ toggle, navigateTo }) => {
     dispatch(authActions.authorize({ endpoint, formData }))
       .unwrap()
       .then((result) => {
-        setIsWaiting(false);
         document.body.classList.remove('page__modal--open');
         
         if (isChecked) {
@@ -162,7 +161,8 @@ export const Authorization: React.FC<Props> = ({ toggle, navigateTo }) => {
       })
       .catch((err) => {
         setErrorMessage(err)
-      });
+      })
+      .finally(() => setIsWaiting(false))
 
     return;
   };

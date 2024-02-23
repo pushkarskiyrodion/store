@@ -2,7 +2,7 @@
 import { AuthEnum } from 'enums/AuthEnum';
 import { Auth } from 'types/Auth';
 
-export const emailPattern = '^[a-zA-Z0-9]+@[a-z]+\\.[a-z]{2,}$';
+export const emailPattern = '^[a-zA-Z0-9\.]+@[a-z]+\\.[a-z]{2,}$';
 
 export const auth: Auth[] = [
   {
@@ -33,7 +33,7 @@ export const auth: Auth[] = [
         type: 'email',
         text: 'Email',
         error: 'Invalid email',
-        pattern: '^[a-zA-Z0-9]+@[a-z]+\\.[a-z]{2,}$',
+        pattern: '^[a-zA-Z0-9\.]+@[a-z]+\\.[a-z]{2,}$',
       },
       {
         id: 'password',
@@ -57,7 +57,7 @@ export const auth: Auth[] = [
         type: 'email',
         text: 'Email',
         error: 'Invalid email',
-        pattern: '^[a-zA-Z0-9]+@[a-z]+\\.[a-z]{2,}$',
+        pattern: '^[a-zA-Z0-9\.]+@[a-z]+\\.[a-z]{2,}$',
       },
       {
         id: 'password',
